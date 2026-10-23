@@ -155,5 +155,56 @@
     }
   </script>
 
+<style>
+/* PixelSpark glow effects */
+button, a {
+  transition: all 0.3s ease;
+}
+
+button:hover, a:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.3);
+  text-shadow: 0 0 12px #00ffff;
+}
+
+body {
+  animation: pageGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes pageGlow {
+  from { box-shadow: inset 0 0 0px #00ffff; }
+  to { box-shadow: inset 0 0 25px #7c3aed; }
+}
+
+.spark {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: sparkFade 0.7s forwards;
+}
+
+@keyframes sparkFade {
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+</style>
+
+<script>
+// PixelSpark interactive sparkle effect
+document.addEventListener("click", function(e) {
+  const spark = document.createElement("span");
+  spark.className = "spark";
+  spark.style.left = e.clientX + "px";
+  spark.style.top = e.clientY + "px";
+  document.body.appendChild(spark);
+  setTimeout(() => spark.remove(), 700);
+});
+</script>
 </body>
 </html>
