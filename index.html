@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelSpark | Web Design</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #10172b;
+      color: white;
+    }
+
+    header {
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #18223b;
+    }
+
+    header h2 {
+      color: #a994ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #c7cfe2;
+      line-height: 1.7;
+    }
+
+    button {
+      background: #805cff;
+      color: white;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #6540df;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #202c48;
+      padding: 25px;
+      border-radius: 12px;
+      width: 220px;
+      text-align: center;
+    }
+
+    .card p {
+      color: #c7cfe2;
+    }
+
+    #join {
+      text-align: center;
+      padding: 45px 20px;
+      background: #18223b;
+    }
+
+    #message {
+      color: #c9baff;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #c7cfe2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>⚡ PixelSpark</h2>
+    <span>Our First Business</span>
+  </header>
+
+  <section class="hero">
+    <h1>Your Idea. Our Creativity.</h1>
+    <p>
+      We create modern and beautiful websites
+      for people with big ideas.
+    </p>
+    <button onclick="showServices()">
+      Explore Services
+    </button>
+  </section>
+
+  <section class="services" id="services">
+    <div class="card">
+      <h3>🎨 Web Design</h3>
+      <p>Beautiful websites for your ideas.</p>
+    </div>
+
+    <div class="card">
+      <h3>📱 Mobile Design</h3>
+      <p>Websites that work on phones.</p>
+    </div>
+
+    <div class="card">
+      <h3>💡 Creative Ideas</h3>
+      <p>We turn ideas into digital projects.</p>
+    </div>
+  </section>
+
+  <section id="join">
+    <h2>Want to join our journey?</h2>
+    <p>Be part of our creative community!</p>
+
+    <button onclick="joinUs()">Join Us</button>
+
+    <p id="message"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 PixelSpark | Built by a future entrepreneur 🚀</p>
+  </footer>
+
+  <script>
+    function showServices() {
+      document.getElementById("services")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+
+    function joinUs() {
+      document.getElementById("message").textContent =
+        "Awesome! Thanks for supporting PixelSpark! 🚀";
+    }
+  </script>
+
+</body>
+</html>
