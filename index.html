@@ -206,5 +206,50 @@ document.addEventListener("click", function(e) {
   setTimeout(() => spark.remove(), 700);
 });
 </script>
+
+<style>
+/* PixelSpark theme switcher */
+#themeToggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 10000;
+  padding: 12px 16px;
+  border: 2px solid #00ffff;
+  border-radius: 25px;
+  background: #17172b;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00ffff;
+}
+
+body.light-mode {
+  background-color: #f5f5ff !important;
+  color: #17172b !important;
+}
+
+body.light-mode p,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #17172b;
+}
+</style>
+
+<button id="themeToggle" onclick="togglePixelTheme()">
+  ☀️ Light Mode
+</button>
+
+<script>
+function togglePixelTheme() {
+  document.body.classList.toggle("light-mode");
+
+  const isLight = document.body.classList.contains("light-mode");
+
+  document.getElementById("themeToggle").textContent =
+    isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
+}
+</script>
 </body>
 </html>
