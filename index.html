@@ -251,5 +251,52 @@ function togglePixelTheme() {
     isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
 }
 </script>
+
+<style>
+/* PixelSpark magical trail */
+.magic-trail {
+  position: fixed;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #00ffff;
+  box-shadow: 0 0 12px #00ffff, 0 0 24px #8b5cf6;
+  pointer-events: none;
+  z-index: 99999;
+  animation: trailFade 0.7s ease-out forwards;
+}
+
+@keyframes trailFade {
+  to {
+    opacity: 0;
+    transform: scale(0.1) rotate(180deg);
+  }
+}
+</style>
+
+<script>
+(function () {
+  let lastTrail = 0;
+
+  function makeTrail(x, y) {
+    const now = Date.now();
+    if (now - lastTrail < 35) return;
+    lastTrail = now;
+
+    const dot = document.createElement("span");
+    dot.className = "magic-trail";
+    dot.style.left = (x - 4) + "px";
+    dot.style.top = (y - 4) + "px";
+
+    document.body.appendChild(dot);
+    setTimeout(() => dot.remove(), 700);
+  }
+
+  document.addEventListener("pointermove", function (e) {
+    makeTrail(e.clientX, e.clientY);
+  });
+})();
+</script>
+
 </body>
 </html>
