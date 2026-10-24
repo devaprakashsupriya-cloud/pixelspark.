@@ -297,6 +297,10 @@ dot.style.height = "16px";
   document.addEventListener("pointermove", function (e) {
     makeTrail(e.clientX, e.clientY);
   });
+document.addEventListener("touchmove", function(e) {
+  const touch = e.touches[0];
+  if (touch) makeTrail(touch.clientX, touch.clientY);
+}, { passive: true });
 })();
 </script>
 </body>
