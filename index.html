@@ -297,16 +297,26 @@ function togglePixelTheme() {
   to { filter: hue-rotate(360deg); }
   }
 .star-sparkle {
-  color: hsl(var(--star-hue, 0), 100%, 65%);
+  color: #ff3cac;
+  -webkit-text-fill-color: currentColor;
   font-size: 12px;
   background: transparent;
   border-radius: 0;
-  box-shadow: 0 0 8px currentColor;
+  box-shadow: none;
   animation: starColorShift 1s linear infinite;
   pointer-events: none;
 }
-
-@keyframes starColorShift {
+.star-sparkle {
+color: #ff3cac;
+  -webkit-text-fill-color: currentColor;
+  font-size: 12px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  animation: starColorShift 1s linear infinite;
+  pointer-events: none;
+    }
+  @keyframes starColorShift {
   0% { color: #ff3cac; }
   25% { color: #ffe600; }
   50% { color: #00f5ff; }
