@@ -296,6 +296,23 @@ function togglePixelTheme() {
   from { filter: hue-rotate(0deg); }
   to { filter: hue-rotate(360deg); }
   }
+.star-sparkle {
+  color: hsl(var(--star-hue, 0), 100%, 65%);
+  font-size: 12px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: 0 0 8px currentColor;
+  animation: starColorShift 1s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes starColorShift {
+  0% { color: #ff3cac; }
+  25% { color: #ffe600; }
+  50% { color: #00f5ff; }
+  75% { color: #7dff6b; }
+  100% { color: #b45cff; }
+    }
 </style>
 
 <script>
@@ -307,7 +324,9 @@ function togglePixelTheme() {
     if (now - lastTrail < 35) return;
     lastTrail = now;
 
-    const dot = document.createElement("span");
+  const dot = document.createElement("span");
+dot.textContent = "★";
+dot.classList.add("star-sparkle");
   dot.className = "magic-trail rainbow-trail";
     dot.style.width = "16px";
 dot.style.height = "16px";
