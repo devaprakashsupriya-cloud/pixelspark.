@@ -285,6 +285,17 @@ function togglePixelTheme() {
     transform: scale(0.1) rotate(180deg);
   }
 }
+.rainbow-trail {
+  background: conic-gradient(red, orange, yellow, lime, cyan, blue, violet, red);
+  border-radius: 50%;
+  box-shadow: 0 0 12px cyan, 0 0 20px magenta;
+  animation: rainbowSpin 0.7s linear infinite;
+}
+
+@keyframes rainbowSpin {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(360deg); }
+  }
 </style>
 
 <script>
